@@ -167,7 +167,7 @@ public class FingerprintHelper extends CordovaPlugin {
         try {
             mKeyGenerator = KeyGenerator
                     .getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
-        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to get an instance of KeyGenerator", e);
         }
 
@@ -194,7 +194,7 @@ public class FingerprintHelper extends CordovaPlugin {
             }
             mKeyGenerator.init(builder.build());
             mKeyGenerator.generateKey();
-        } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | CertificateException | IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -215,8 +215,7 @@ public class FingerprintHelper extends CordovaPlugin {
             return true;
         } catch (KeyPermanentlyInvalidatedException e) {
             return false;
-        } catch (KeyStoreException | CertificateException | UnrecoverableKeyException | IOException
-                | NoSuchAlgorithmException | InvalidKeyException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to init Cipher", e);
         }
     }
@@ -229,7 +228,7 @@ public class FingerprintHelper extends CordovaPlugin {
             cipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/"
                     + KeyProperties.BLOCK_MODE_CBC + "/"
                     + KeyProperties.ENCRYPTION_PADDING_PKCS7);
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to get an instance of Cipher", e);
         }
 

@@ -1,0 +1,30 @@
+{
+  "name": "fingerprint",
+  "version": "1.0.0",
+  "description": "Cordova plugin to use fingerprint on Android",
+  "cordova": {
+    "id": "com.knowarth.fingerprintutil.utils",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitulknowarth/fingerprint.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "android",
+    "fingerprint",
+    "authentication",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Mitul Varmora",
+  "license": "MITUL",
+  "bugs": {
+    "url": "https://github.com/mitulknowarth/fingerprint/issues"
+  },
+  "homepage": "https://github.com/mitulknowarth/fingerprint#readme"
+}

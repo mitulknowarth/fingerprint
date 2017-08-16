@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="com.knowarth.fingerprintutil.utils"
+  version="1.0.0">
+  <name>FingerprintUtil</name>
+  <description>Cordova plugin to use fingerprint on Android</description>
+  <license>MITUL</license>
+  <keywords>cordova,plugin,android,fingerprint,authentication</keywords>
+  <!-- <repo>https://github.com/niklasmerz/cordova-plugin-fingerprint-aio.git</repo>
+  <issue>https://github.com/cordova-plugin-fingerprint-aio/issues</issue> -->
+
+  <js-module src="www/fingerprint_util.js" name="fingerprintUtil">
+    <clobbers target="fingerprintUtil" />
+  </js-module>
+
+  <!-- <dependency id="cordova-plugin-add-swift-support" url="cordova-plugin-add-swift-support"/> -->
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="FingerPrintHelper">
+        <param name="android-package" value="com.knowarth.fingerprintutil.utils.FingerprintHelper" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    </config-file>
+
+    <source-file src="src/android/FingerprintHelper.java" target-dir="src/com/knowarth/fingerprintutil/utils" />
+    <source-file src="src/android/FingerprintAuthenticationDialogFragment.java" target-dir="src/com/knowarth/fingerprintutil/utils" />
+    <source-file src="src/android/FingerprintUiHelper.java" target-dir="src/com/knowarth/fingerprintutil/utils" />
+
+    <source-file src="res/android/drawable/ic_fingerprint_error.xml" target-dir="res/drawable" />
+    <source-file src="res/android/drawable/ic_fingerprint_success.xml" target-dir="res/drawable" />
+    <source-file src="res/android/drawable-hdpi/ic_fp_40px.png" target-dir="res/drawable-hdpi" />
+    <source-file src="res/android/drawable-mdpi/ic_fp_40px.png" target-dir="res/drawable-mdpi" />
+    <source-file src="res/android/drawable-xhdpi/ic_fp_40px.png" target-dir="res/drawable-xhdpi" />
+    <source-file src="res/android/drawable-xxhdpi/ic_fp_40px.png" target-dir="res/drawable-xxhdpi" />
+    <source-file src="res/android/drawable-xxxhdpi/ic_fp_40px.png" target-dir="res/drawable-xxxhdpi" />
+
+    <source-file src="res/android/layout/fingerprint_dialog_container.xml" target-dir="res/layout" />
+    <source-file src="res/android/layout/fingerprint_dialog_content.xml" target-dir="res/layout" />
+
+    <source-file src="res/android/values/colors.xml" target-dir="res/values" />
+    <source-file src="res/android/values/strings.xml" target-dir="res/values" />
+
+  </platform>
+
+</plugin>

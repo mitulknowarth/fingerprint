@@ -45,7 +45,7 @@
     <source-file src="res/android/layout/fingerprint_dialog_content.xml" target-dir="res/layout" />
 
     <source-file src="res/android/values/colors.xml" target-dir="res/values" />
-    <source-file src="res/android/values/strings.xml" target-dir="res/values" />
+    <source-file src="res/android/values/strings_fingerprint.xml" target-dir="res/values" />
 
   </platform>
 
